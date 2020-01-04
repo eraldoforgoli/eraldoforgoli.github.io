@@ -1,34 +1,51 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { Button } from "antd";
-import { Switch, Icon } from "antd";
+import { Switch } from "antd";
+import { darkTheme } from "../../styles/theme";
 
-const StyledButton = styled(Button)``;
-const Li = styled.li`
-  float: left;
+const StyledHeader = styled.div`
+  background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
 `;
 
-const Ul = styled.ul`
-  list-style-type: none;
+const Div = styled.div`
+  display: inline-block;
 `;
 
-const Header = ({ handleChange }) => {
+const ThemedLink = styled(Button)`
+  color: ${props => props.theme.PRIMARY_TEXT_COLOR};
+`;
+
+const ThemedSwitch = styled(Switch)`
+  background-color: ${props => props.theme.PRIMARY_BUTTON_COLOR};
+`;
+
+StyledHeader.defaultProps = {
+  theme: darkTheme
+};
+
+const Header = ({ handleChange, theme }) => {
   return (
-    <>
-      <Ul>
-        <Li>
-          <StyledButton type="link"> About </StyledButton>
-        </Li>
-        <Li>
-          <Switch
+    <ThemeProvider theme={theme}>
+      <StyledHeader>
+        <Div>
+          <ThemedLink type="link"> About </ThemedLink>
+          <ThemedSwitch
             checkedChildren="dark"
             unCheckedChildren="light"
             defaultChecked
             onChange={handleChange}
           />
-        </Li>
-      </Ul>
-    </>
+        </Div>
+      </StyledHeader>
+    </ThemeProvider>
   );
 };
 
