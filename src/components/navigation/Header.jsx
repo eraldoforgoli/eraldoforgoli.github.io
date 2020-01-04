@@ -10,9 +10,9 @@ const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  position: inherit;
 
-  color: white;
+  width: 100%;
 `;
 
 const Div = styled.div`
