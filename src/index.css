@@ -17,3 +17,9 @@ code {
   transition: 0.3s;
   margin: 10px;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0px;
+}
