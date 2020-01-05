@@ -1,9 +1,10 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { Row, Col, Timeline, Icon, Collapse as AntCollapse } from "antd";
+import { Row, Col, Timeline, Typography, Collapse as AntCollapse } from "antd";
 import Collapse from "../components/generic/Collapse";
 
 const { Panel } = AntCollapse;
+const { Title } = Typography;
 
 const ThemedDiv = styled.div`
   background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
@@ -18,8 +19,8 @@ const CenteredContainer = styled.div`
   margin: 70px;
 `;
 
-const Title = styled.h1`
-  color: ${props => props.theme.PRIMARY_TEXT_COLOR};
+const ThemedTitle = styled(Title)`
+  color: ${props => props.theme.HEADER} !important;
 `;
 
 const Content = styled.p`
@@ -52,6 +53,8 @@ const Text = styled.p`
   color: ${props => props.theme.PRIMARY_TEXT_COLOR};
 `;
 
+//TODO refactor into reusable components.
+// Create reusable lists for experience items
 const About = ({ theme }) => {
   console.log(theme);
   return (
@@ -61,13 +64,13 @@ const About = ({ theme }) => {
           <ThemedDiv>
             <Col span={12} offset={6}>
               <CenteredContainer>
-                <Title>About me</Title>
+                <ThemedTitle>About me</ThemedTitle>
                 <Content>
                   Passionate software engineer, interested in clean, performant,
                   scalable software architectures, cloud computing, and clean
                   coding.
                 </Content>
-                <Title>Experience</Title>
+                <ThemedTitle>Experience</ThemedTitle>
                 <Timeline>
                   <TimelineItem>
                     <ThemedCollapse>
