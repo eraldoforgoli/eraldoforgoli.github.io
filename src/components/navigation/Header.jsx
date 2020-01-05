@@ -11,9 +11,10 @@ const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: inherit;
-
+  top: 0;
   width: 100%;
+  z-index: 100;
+  position: fixed;
 `;
 
 const Div = styled.div`

@@ -8,7 +8,8 @@ const { Title } = Typography;
 
 const ThemedDiv = styled.div`
   background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
-  min-height: 100vh;
+
+  position: absolute;
 `;
 
 const ThemedCollapse = styled(Collapse)`
