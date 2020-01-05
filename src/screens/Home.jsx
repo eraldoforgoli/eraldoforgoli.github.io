@@ -28,7 +28,7 @@ const Home = ({ theme }) => {
           <ThemedDiv>
             <Col span={12} offset={6}>
               <CenteredContainer>
-                <Title>Cim Peka </Title>
+                <Title>Eraldo</Title>
                 <Content>
                   Contrary to popular belief, Lorem Ipsum is not simply random
                   text. It has roots in a piece of classical Latin literature

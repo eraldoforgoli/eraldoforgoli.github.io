@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { Button } from "antd";
 import { Switch } from "antd";
 import { darkTheme } from "../../styles/theme";
+import { useHistory } from "react-router-dom";
 
 const StyledHeader = styled.div`
   background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
@@ -32,11 +33,19 @@ StyledHeader.defaultProps = {
 };
 
 const Header = ({ handleChange, theme }) => {
+  //let history = useHistory();
+
+  const goToAboutPage = () => {
+    //history.push("/about");
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <StyledHeader>
         <Div>
-          <ThemedLink type="link"> About </ThemedLink>
+          <ThemedLink type="link" onClick={() => goToAboutPage}>
+            About
+          </ThemedLink>
           <ThemedSwitch
             checkedChildren="dark"
             unCheckedChildren="light"
