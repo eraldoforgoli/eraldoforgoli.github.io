@@ -21,14 +21,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header handleChange={onThemeChange} theme={{ ...theme }} />
+      <Header handleChange={onThemeChange} theme={theme} />
 
       <Router>
         <Switch>
           <Route
             exact
             path="/"
-            render={props => <Home {...props} theme={theme} />}
+            render={props => <About {...props} theme={theme} />}
           />
           <Route
             exact
